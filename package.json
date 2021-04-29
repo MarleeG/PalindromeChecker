@@ -1,0 +1,26 @@
+{
+  "name": "PalindromeChecker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarleeG/PalindromeChecker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarleeG/PalindromeChecker/issues"
+  },
+  "homepage": "https://github.com/MarleeG/PalindromeChecker#readme",
+  "dependencies": {
+    "concurrently": "^6.0.2",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4"
+  }
+}
