@@ -23,6 +23,6 @@ app.listen(PORT, (err) => {
     throw err;
   }
 
-  console.log(`API PORT IS LISTENING ON htpp://localhost:${PORT}`);
+  console.log(`🌎 ==> API server now on port ${PORT}!`);
   
 });
