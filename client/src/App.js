@@ -1,12 +1,15 @@
-import './App.css';
-import Header from './components/Header';
+import { Container } from "react-bootstrap";
+import Header from "./components/Header";
 
+import "./App.css";
 const App = () => {
   return (
-    <div className="App">
-      <Header/>
-    </div>
+    <Container fluid>
+        <div className="my-5 App">
+          <Header />
+        </div>
+      </Container>
   );
-}
+};
 
 export default App;

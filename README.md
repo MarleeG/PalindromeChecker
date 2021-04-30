@@ -1,8 +1,8 @@
 # PalindromeChecker - UNDER CONSTRUCTION
 
-This is checks where the string inputted is a palindrome. 
+This app checks if the string inputted is a palindrome. 
 
-Palindrome - a word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run.
+Palindrome - a word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run. 
 
 ## Built With
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
