@@ -3,8 +3,8 @@
   border: 1px solid #e7e9e9;
   width: 50%;
   height: 50%;
-  /* margin: auto; */
   border-radius: 2px;
+  overflow: scroll;
 
 
   position: fixed;
