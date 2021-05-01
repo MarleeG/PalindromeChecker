@@ -7,6 +7,22 @@ const { log } = console;
 const InputField = () => {
   const [inputFieldVal, setInputFieldVal] = useState("");
 
+  const isPalindrome = (val) => {
+    let sequence = val.replace(" ", "").toLowerCase();
+    let reverseCharIdx = sequence.length - 1;
+
+    for (let i = 0; i < sequence.length; i++) {
+
+      if (sequence[i] !== sequence[reverseCharIdx]) {
+        return false;
+      }
+
+      reverseCharIdx--;
+    }
+
+    return true;
+  };
+
   const handleChange = (e) => {
     const { value } = e.target;
     setInputFieldVal(value);
@@ -14,8 +30,9 @@ const InputField = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    log(inputFieldVal);
-  }
+
+    log(isPalindrome(inputFieldVal));
+  };
 
   return (
     <div>
