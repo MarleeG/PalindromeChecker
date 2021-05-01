@@ -9,13 +9,17 @@ const InputField = () => {
 
   const handleChange = (e) => {
     const { value } = e.target;
-    log(value);
     setInputFieldVal(value);
   };
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    log(inputFieldVal);
+  }
+
   return (
     <div>
-      <Form>
+      <Form onSubmit={handleClick}>
         <Form.Group controlId="formBasicEmail">
           <Form.Control
             type="text"
