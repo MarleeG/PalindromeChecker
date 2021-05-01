@@ -3,9 +3,9 @@ import React from 'react'
 import "./Button.css"
 const Button = () => {
   return (
-    <div>
-      
-    </div>
+    <button type="submit" className="text-center button">
+      check palindrome
+    </button>
   )
 }
 
