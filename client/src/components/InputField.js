@@ -55,6 +55,7 @@ const InputField = () => {
             placeholder="Enter something special"
             value={inputFieldVal}
             onChange={handleChange}
+            className="g-font-montserrat input"
           />
         </Form.Group>
 
