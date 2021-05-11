@@ -29,12 +29,14 @@ const InputField = () => {
   const handleChange = (e) => {
     const { value } = e.target;
     setInputFieldVal(value);
+
+
   };
 
   const handleClick = (e) => {
     e.preventDefault();
 
-    setPalindrome(isPalindrome(inputFieldVal))
+    setPalindrome(isPalindrome(inputFieldVal));
 
     // log();
   };
@@ -56,14 +58,13 @@ const InputField = () => {
           />
         </Form.Group>
 
-        <Button />
+        <Button disabled={inputFieldVal.trim() === "" || inputFieldVal.length === 1} />
       </Form>
 
-     <p className="text-center">
-       {palindrome.toString()}
-       {/* {palindrome ? `${inputFieldVal} is a palindrome.` : `${inputFieldVal} is not a palindrome.`} */}
-
-     </p>
+      <p className="text-center">
+        {palindrome.toString()}
+        {/* {palindrome ? `${inputFieldVal} is a palindrome.` : `${inputFieldVal} is not a palindrome.`} */}
+      </p>
     </div>
   );
 };
