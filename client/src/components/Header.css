@@ -1,3 +1,10 @@
-.header{
+.header {
   padding: 15px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.header h1 {
+  letter-spacing: 10px;
+  font-size: 50px;
 }
