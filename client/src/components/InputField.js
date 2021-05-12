@@ -9,7 +9,10 @@ const InputField = () => {
   const [palindrome, setPalindrome] = useState(false);
 
   const isPalindrome = (val) => {
-    let sequence = val.replace(" ", "").toLowerCase();
+    let sequence = val.replace(" ", "").toLowerCase().trim();
+    // let sequence = val.toLowerCase();
+    console.log(sequence)
+
     let reverseCharIdx = sequence.length - 1;
 
     for (let i = 0; i < sequence.length; i++) {
@@ -20,8 +23,6 @@ const InputField = () => {
 
       reverseCharIdx--;
     }
-
-    // setPalindrome(true);
 
     return true;
   };
@@ -37,12 +38,9 @@ const InputField = () => {
     e.preventDefault();
 
     setPalindrome(isPalindrome(inputFieldVal));
-
-    // log();
   };
 
   useEffect(() => {
-    // console.log(palindrome)
   }, []);
 
   return (
@@ -59,7 +57,7 @@ const InputField = () => {
           />
         </Form.Group>
 
-        <Button disabled={inputFieldVal.trim() === "" || inputFieldVal.length === 1} />
+        <Button disabled={inputFieldVal.trim() === "" || inputFieldVal.trim().length === 1} />
       </Form>
 
       <p className="text-center">
