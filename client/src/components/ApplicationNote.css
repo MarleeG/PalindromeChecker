@@ -1,0 +1,22 @@
+.application-note{
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 100%;
+  background: #f1f3f3;
+
+  color: black;
+  text-align: center;
+
+  word-spacing: 5px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  /* border-top: 1px solid #adb2b2; */
+
+  background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+
+}
+
+a:hover{
+  text-decoration: none;
+}
