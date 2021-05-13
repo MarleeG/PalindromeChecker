@@ -7,11 +7,12 @@ const { log } = console;
 const InputField = () => {
   const [inputFieldVal, setInputFieldVal] = useState("");
   const [palindrome, setPalindrome] = useState(false);
+  const [showPalindromeResults, setShowPalindromeResults] = useState(false);
 
   const isPalindrome = (val) => {
     let sequence = val.replace(" ", "").toLowerCase().trim();
     // let sequence = val.toLowerCase();
-    console.log(sequence)
+    console.log(sequence);
 
     let reverseCharIdx = sequence.length - 1;
 
@@ -30,22 +31,21 @@ const InputField = () => {
   const handleChange = (e) => {
     const { value } = e.target;
     setInputFieldVal(value);
-
-
+    showPalindromeResults && setShowPalindromeResults(false)
   };
 
-  const handleClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     setPalindrome(isPalindrome(inputFieldVal));
+    setShowPalindromeResults(true);
   };
 
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div>
-      <Form onSubmit={handleClick}>
+      <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
           <Form.Control
             type="text"
@@ -57,13 +57,33 @@ const InputField = () => {
           />
         </Form.Group>
 
-        <Button disabled={inputFieldVal.trim() === "" || inputFieldVal.trim().length === 1} />
+        <Button
+          disabled={
+            inputFieldVal.trim() === "" || inputFieldVal.trim().length === 1
+          }
+        />
       </Form>
 
-      <p className="text-center">
-        {palindrome.toString()}
-        {/* {palindrome ? `${inputFieldVal} is a palindrome.` : `${inputFieldVal} is not a palindrome.`} */}
-      </p>
+      {showPalindromeResults && (
+        <div className="text-center palindrome-results-container g-font-montserrat">
+          {/* {palindrome.toString()} */}
+          {palindrome ? (
+            <p>
+              <strong className="text-inputted-palindrome-check g-font-amatic">
+                {inputFieldVal}
+              </strong>{" "}
+              is a palindrome.
+            </p>
+          ) : (
+            <p>
+              <strong className="text-inputted-palindrome-check g-font-amatic">
+                {inputFieldVal}
+              </strong>{" "}
+              is not a palindrome.
+            </p>
+          )}
+        </div>
+      )}
     </div>
   );
 };
