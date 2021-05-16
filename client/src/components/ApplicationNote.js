@@ -5,7 +5,7 @@ const ApplicationNote = () => {
   return (
     <div className="application-note g-font-amatic">
       This application was built by{" "}
-      <a href="https://marlee-gerard.herokuapp.com" target="_blank">
+      <a href="https://marlee-gerard.herokuapp.com" target="_blank" rel="noreferrer">
         <span className="app-creator-name">Marlee Gerard</span>
       </a>
     </div>

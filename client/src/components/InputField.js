@@ -3,7 +3,6 @@ import { Form } from "react-bootstrap";
 import Button from "./Button";
 
 import "./InputField.css";
-const { log } = console;
 const InputField = () => {
   const [inputFieldVal, setInputFieldVal] = useState("");
   const [palindrome, setPalindrome] = useState(false);
@@ -46,7 +45,7 @@ const InputField = () => {
   return (
     <div>
       <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="formBasicEmail">
+        <Form.Group controlId="inputField">
           <Form.Control
             type="text"
             size="lg"
