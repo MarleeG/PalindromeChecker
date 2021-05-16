@@ -9,7 +9,6 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  /* bring your own prefixes */
   transform: translate(-50%, -50%);
 
   -webkit-box-shadow: 10px 10px 34px -8px rgba(0, 0, 0, 0.75);
@@ -33,6 +32,14 @@
   }
 }
 
+@media only screen and (max-width: 450px) {
+  .base {
+    -webkit-box-shadow: 0px 10px 37px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 10px 37px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 10px 37px -10px rgba(0, 0, 0, 0.75);
+  }
+}
+
 @media only screen and (max-width: 400px) {
   .base {
     height: 55%;
@@ -43,6 +50,10 @@
   .base {
     height: 62%;
     transform: translate(-50%, -70%);
+
+    -webkit-box-shadow: 0px 10px 24px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 10px 24px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 10px 24px -10px rgba(0, 0, 0, 0.75);
   }
 }
 
