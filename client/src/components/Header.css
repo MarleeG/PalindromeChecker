@@ -8,3 +8,14 @@
   letter-spacing: 10px;
   font-size: 50px;
 }
+
+
+@media only screen and (max-width: 460px) {
+  .header h1 {
+    font-size: 35px;
+  }
+
+  .header p{
+    font-size: 15px;
+  }
+}
