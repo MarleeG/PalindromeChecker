@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Form } from "react-bootstrap";
 import Button from "./Button";
 
@@ -8,9 +8,12 @@ const InputField = () => {
   const [palindrome, setPalindrome] = useState(false);
   const [showPalindromeResults, setShowPalindromeResults] = useState(false);
 
+  // palindrome-results-container
+  // const palindromeResultsContainer = useRef(null);
+
+  // this function has a linear algorithm which will determine if the value in the input field is a palindrome
   const isPalindrome = (val) => {
     let sequence = val.replace(" ", "").toLowerCase().trim();
-    // let sequence = val.toLowerCase();
     console.log(sequence);
 
     let reverseCharIdx = sequence.length - 1;
@@ -27,17 +30,27 @@ const InputField = () => {
     return true;
   };
 
+  // this function will update the input's value on each key stroke
   const handleChange = (e) => {
     const { value } = e.target;
     setInputFieldVal(value);
-    showPalindromeResults && setShowPalindromeResults(false)
+    showPalindromeResults && setShowPalindromeResults(false);
   };
 
+  // this will execute a few functions when the user clicks on the "CHECK PALINDROME" button
   const handleSubmit = (e) => {
+    // This will prevent the default behaviour of the browser when a form is submittted.
     e.preventDefault();
 
+    // the setPalindrome function will set palindrome to true or false if the word/phrase is an palindrome
     setPalindrome(isPalindrome(inputFieldVal));
+
+    // the palindrome results will be shown once the user submits the form.
+    // a minimum of 2 characters must be in the input field in order to submit the form
     setShowPalindromeResults(true);
+
+    // palindromeResultsContainer.current && palindromeResultsContainer.current.scrollIntoView();
+    // console.log(palindromeResultsContainer);
   };
 
   useEffect(() => {}, []);
@@ -64,8 +77,9 @@ const InputField = () => {
       </Form>
 
       {showPalindromeResults && (
-        <div className="text-center palindrome-results-container g-font-montserrat">
-          {/* {palindrome.toString()} */}
+        <div
+          className="text-center palindrome-results-container g-font-montserrat"
+        >
           {palindrome ? (
             <p>
               <strong className="text-inputted-palindrome-check g-font-amatic">
