@@ -1,4 +1,4 @@
-# PalindromeChecker - UNDER CONSTRUCTION
+# PalindromeChecker
 
 This app checks if the string inputted is a palindrome. 
 
@@ -7,13 +7,11 @@ Palindrome - a word, phrase, or sequence that reads the same backward as forward
 ## Built With
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [React](https://reactjs.org/)
-* [Mongoose](https://mongoosejs.com/)
-* [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 * [React-Bootstrap](https://react-bootstrap.github.io/)
 * [CSS](https://www.w3schools.com/css/default.asp)
+* [Node.js](https://nodejs.org/en/docs/)
 * [Express](https://expressjs.com/)
 * [Bootstrap](https://getbootstrap.com/)
-* [Semantic UI - Icons](https://semantic-ui.com/elements/icon.html)
 
 ## Deployed App
-* [PalindromeChecker-App](https://palindromechecker-mg.herokuapp.com) - Coming Soon
+* [PalindromeChecker-App](https://palindromechecker-mg.herokuapp.com) - App
