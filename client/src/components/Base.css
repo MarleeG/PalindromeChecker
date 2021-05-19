@@ -25,6 +25,14 @@
   }
 }
 
+@media only screen and (max-width: 575px) {
+  .base {
+    height: 60%;
+    transform: translate(-50%, -75%);
+
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .base {
     height: 60%;
@@ -42,7 +50,7 @@
 
 @media only screen and (max-width: 400px) {
   .base {
-    height: 55%;
+    height: 50%;
   }
 }
 
