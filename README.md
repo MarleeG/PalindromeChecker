@@ -9,7 +9,6 @@ Palindrome - a word, phrase, or sequence that reads the same backward as forward
 * [React](https://reactjs.org/)
 * [React-Bootstrap](https://react-bootstrap.github.io/)
 * [CSS](https://www.w3schools.com/css/default.asp)
-* [Node.js](https://nodejs.org/en/docs/)
 * [Express](https://expressjs.com/)
 * [Bootstrap](https://getbootstrap.com/)
 

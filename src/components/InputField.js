@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { Form } from "react-bootstrap";
 import Button from "./Button";
 
@@ -59,7 +59,7 @@ const InputField = () => {
   useEffect(() => {
     refresh &&
       palindromeResultsContainer.current.scrollIntoView({ behavior: "smooth" });
-  }, [refresh]);
+  }, [refresh, palindromeResultsContainer]);
 
   return (
     <div>
