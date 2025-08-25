@@ -21,25 +21,39 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      # Figure out where package.json lives: client/ or repo root
+      - name: Detect app directory
+        id: detect
+        run: |
+          if [ -f "client/package.json" ]; then
+            echo "APP_DIR=client" >> $GITHUB_ENV
+          else
+            echo "APP_DIR=." >> $GITHUB_ENV
+          fi
+          echo "App directory: ${APP_DIR}"
+
+      - name: Setup Node (16.x) with npm cache
         uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 16.20.2
           cache: npm
-          cache-dependency-path: client/package-lock.json
+          # use wildcard so cache never fails if app isn't in client/
+          cache-dependency-path: '**/package-lock.json'
 
       - name: Install deps
-        working-directory: client
+        working-directory: ${{ env.APP_DIR }}
         run: npm ci
 
       - name: Build
-        working-directory: client
+        working-directory: ${{ env.APP_DIR }}
         run: npm run build
 
-      # Make React Router work on refresh by serving index on 404
+      # Optional: GitHub Pages SPA fallback for React Router
       - name: SPA fallback (index -> 404)
         run: |
-          if [ -d "client/build" ]; then cp client/build/index.html client/build/404.html; fi
+          if [ -d "${{ env.APP_DIR }}/build" ]; then
+            cp "${{ env.APP_DIR }}/build/index.html" "${{ env.APP_DIR }}/build/404.html"
+          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -47,7 +61,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: client/build
+          path: ${{ env.APP_DIR }}/build
 
   deploy:
     environment:
